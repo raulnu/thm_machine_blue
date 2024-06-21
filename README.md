@@ -97,6 +97,8 @@ migrate PROCESS_ID
 Now we are in the powershell.
 I now run 'hashdump' to get the hashes of the users: Jon, and check if I can crack the password in hashes.com
 
+### Flags
+
 I've found the first flag running 'search flag*'
 
 Now I just have to go to the directories and check them.
