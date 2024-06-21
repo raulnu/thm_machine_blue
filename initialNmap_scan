@@ -1,0 +1,40 @@
+# Nmap 7.94SVN scan initiated Fri Jun 21 11:19:16 2024 as: nmap -sV -vv -script vuln -oN initialNmap_scan 10.10.92.38
+Nmap scan report for 10.10.92.38
+Host is up, received reset ttl 127 (0.063s latency).
+Scanned at 2024-06-21 11:19:26 CEST for 149s
+Not shown: 991 closed tcp ports (reset)
+PORT      STATE SERVICE        REASON          VERSION
+135/tcp   open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn    syn-ack ttl 127 Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds   syn-ack ttl 127 Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open  ms-wbt-server? syn-ack ttl 127
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+49152/tcp open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+49153/tcp open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+49154/tcp open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+49158/tcp open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+49160/tcp open  msrpc          syn-ack ttl 127 Microsoft Windows RPC
+Service Info: Host: JON-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-vuln-ms17-010: 
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+|           
+|     Disclosure date: 2017-03-14
+|     References:
+|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+|_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun 21 11:21:55 2024 -- 1 IP address (1 host up) scanned in 159.58 seconds
